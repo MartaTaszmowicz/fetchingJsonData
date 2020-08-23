@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart';
+import '../model/PostList.dart';
 
 /// todo: Return always status code
 class Network {
@@ -15,6 +16,16 @@ class Network {
       return json.decode(response.body);
     } else {
       print(response.statusCode);
+    }
+  }
+
+  Future<PostList> loadPosts() async {
+    Response response = await get(Uri.encodeFull(url));
+    if (response.statusCode == 200) {
+      return PostList.fromJson(json.decode(response.body));
+    } else {
+      print(response.statusCode);
+      //throw Exception("Filed to get posts");
     }
   }
 }

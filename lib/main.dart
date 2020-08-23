@@ -1,3 +1,4 @@
+import 'package:fetchingJsonData/parsing_json/parsing_json_map.dart';
 import 'package:flutter/material.dart';
 
 import 'parsing_json/parsing_json.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: JsonParsingSimple(),
+      home: JsonParsingMap(),
     );
   }
 }
