@@ -8,3 +8,5 @@ https://jsonplaceholder.typicode.com/
 ### Dependency 
 A composable, Future-based library for making HTTP requests.
 https://pub.dev/packages/http
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y023DCE)
