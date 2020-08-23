@@ -7,6 +7,23 @@ class JsonParsingSimple extends StatefulWidget {
 }
 
 class _JsonParsingSimpleState extends State<JsonParsingSimple> {
+  Future data;
+
+  @override
+  void initState() {
+    super.initState();
+    data = getData();
+  }
+
+  Future getData() async {
+    var data;
+    String url = "https://jsonplaceholder.typicode.com/posts";
+    Network network = Network(url);
+
+    data = network.fetchData();
+    return data;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +41,10 @@ class Network {
   Network(this.url);
 
   Future fetchData() async {
-    print("$url");
+    //print("$url");
     Response response = await get(Uri.encodeFull(url));
     if (response.statusCode == 200) {
-      // OK
-      print(response.body);
+      //print(response.body);
       return response.body;
     } else {
       print(response.statusCode);
